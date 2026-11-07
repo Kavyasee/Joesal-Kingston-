@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102d35">
+<title>Joesal's Wonderworld | A Little Universe of Big Dreams</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+:root{--night:#102d35;--deep:#17434b;--cream:#fffaf0;--gold:#efc982;--mint:#c8e2d6;--ink:#18343a;--muted:#667b7d;--pink:#f4d9d5;--line:#e9e2d3}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 6%;background:#102d35f2;backdrop-filter:blur(12px);color:white;border-bottom:1px solid #ffffff20}.logo{font-weight:800;letter-spacing:2px;font-size:14px}.logo span{color:var(--gold)}nav{display:flex;gap:22px;align-items:center}nav a{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#d8e5df;transition:.2s}nav a:hover{color:var(--gold)}.menu-btn{display:none;background:none;border:1px solid #ffffff55;color:white;padding:7px 10px;border-radius:5px}
+.hero{min-height:690px;position:relative;overflow:hidden;padding:100px 8% 70px;color:white;background:radial-gradient(circle at 80% 42%,#376b69 0,#1d5055 25%,#102d35 65%)}.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:55px 55px;opacity:.15;mask-image:linear-gradient(90deg,transparent,#000)}.hero-inner{position:relative;z-index:2;max-width:650px}.eyebrow{font-size:10px;letter-spacing:3px;font-weight:800;color:#d7b675;text-transform:uppercase}.hero h1{font:700 clamp(58px,9vw,108px)/.94 'Playfair Display',serif;letter-spacing:-4px;margin:22px 0}.hero h1 em{color:var(--gold)}.hero p{font-size:17px;line-height:1.85;color:#d4e2dc;max-width:500px}.btn{display:inline-flex;align-items:center;gap:22px;margin-top:18px;padding:15px 21px;background:var(--gold);color:var(--night);font-weight:800;font-size:12px;border:0;border-radius:3px;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px #0003}.hero-orbit{position:absolute;width:min(43vw,490px);aspect-ratio:1;border:1px solid #ffffff30;border-radius:50%;right:8%;top:18%;display:grid;place-items:center}.hero-orbit:before,.hero-orbit:after{content:"";position:absolute;border:1px solid #ffffff24;border-radius:50%}.hero-orbit:before{inset:12%}.hero-orbit:after{inset:25%}.planet{width:48%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 28%,#ffe7b4,#d79d68 45%,#995f4e 85%);box-shadow:0 0 80px #e9bd7b55;z-index:1}.orbit-star{position:absolute;color:var(--gold);font-size:26px}.s1{top:12%;left:24%}.s2{right:10%;bottom:25%;font-size:36px}.s3{left:8%;bottom:18%;font-size:18px}.hero-tag{position:absolute;bottom:28px;left:8%;right:8%;display:flex;justify-content:space-between;color:#b8ceca;font-size:9px;letter-spacing:2px;font-weight:700}
+section{padding:88px 8%}.section-head{text-align:center;max-width:650px;margin:0 auto 42px}.section-head h2{font:700 clamp(36px,5vw,58px)/1.08 'Playfair Display',serif;margin:12px 0;color:var(--ink)}.section-head h2 em{color:#b07c45}.section-head p{color:var(--muted);line-height:1.7}.welcome{background:#f3eee2}.welcome-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;max-width:1050px;margin:auto}.welcome-card,.quote-card{border-radius:12px;padding:35px;background:white;box-shadow:0 14px 35px #1a39300b}.welcome-card h3,.quote-card h3{font:700 29px 'Playfair Display',serif;margin:0 0 12px}.welcome-card p,.quote-card p{line-height:1.8;color:var(--muted)}.quote-card{background:var(--deep);color:white;display:flex;flex-direction:column;justify-content:center}.quote-card p{color:#d3e2dc;font:italic 22px/1.6 'Playfair Display',serif}.quote-card .spark{font-size:32px;color:var(--gold)}
+.door-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:1100px;margin:auto}.door{grid-column:span 2;min-height:235px;border-radius:10px;padding:25px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:.25s}.door:nth-child(4){grid-column:2/span 2}.door:nth-child(5){grid-column:4/span 2}.door:hover{transform:translateY(-7px);box-shadow:0 16px 35px #172d351c}.door small{font-size:9px;letter-spacing:1.5px;font-weight:800;color:#526b6b}.door .emoji{font-size:34px;margin:13px 0}.door h3{font:700 27px 'Playfair Display',serif;margin:0 0 8px}.door p{font-size:13px;line-height:1.6;color:#5d7071;margin:0 0 18px}.door b{font-size:11px;margin-top:auto}.d1{background:#d9e9e4}.d2{background:#e4e9d6}.d3{background:#f3e2c8}.d4{background:#f1dcdf}.d5{background:#e6def0}
+.about{background:#e8efea}.about-layout{max-width:1000px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center}.initials{min-height:300px;border-radius:12px;background:linear-gradient(145deg,#1c5155,#102d35);display:grid;place-items:center;color:var(--gold);font:700 100px 'Playfair Display',serif;position:relative;overflow:hidden}.initials:after{content:"✦  ✧  ✦";position:absolute;bottom:28px;font:20px 'DM Sans';letter-spacing:12px;color:#ffffff80}.about-copy h2{font:700 40px 'Playfair Display',serif;margin:0 0 14px}.about-copy p{line-height:1.85;color:#53696b}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.pill{background:#fff;padding:8px 12px;border-radius:30px;font-size:11px;font-weight:700;color:#42615d}
+.interests-grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.interest{min-height:225px;padding:22px 18px;border-radius:10px;display:flex;flex-direction:column}.interest .emoji{font-size:39px}.interest h3{font:700 23px 'Playfair Display',serif;margin:15px 0 7px}.interest p{font-size:12px;line-height:1.65;color:#5b6d6e;margin:0}.i1{background:#dceae5}.i2{background:#eadfee}.i3{background:#e8ebd9}.i4{background:#f4e4ce}.i5{background:#dce9db}
+.memories{background:#f3eee2}.table-wrap{max-width:1000px;margin:auto;background:white;border-radius:10px;padding:24px;box-shadow:0 12px 30px #1b34300b;overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:16px 14px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:9px;letter-spacing:1.5px;color:#a17b4c;text-transform:uppercase}td{color:#52676a}.table-note{font-size:11px;color:#859294;margin:15px 4px 0}
+.gallery-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery-tile{height:190px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;transition:.2s}.gallery-tile:hover{transform:scale(1.02)}.gallery-tile span{font-size:52px}.gallery-tile b{font:700 20px 'Playfair Display',serif}.g1{background:#dceae5}.g2{background:#eadfee}.g3{background:#e8ebd9}.g4{background:#f4e4ce}.g5{background:#dce9db}.g6{background:#e7e0ef}.media-note{max-width:1000px;margin:25px auto 0;background:white;border:1px dashed #c9c3b4;border-radius:9px;padding:20px;color:var(--muted);font-size:12px;line-height:1.7}
+.guestbook{background:#e8efea}.form-card{max-width:680px;margin:auto;background:white;padding:32px;border-radius:12px;box-shadow:0 12px 30px #1b34300b}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:800;letter-spacing:.5px}.field input,.field select,.field textarea{border:1px solid #d9e0d9;border-radius:5px;padding:13px;background:#fffefa;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#6b9a8c;box-shadow:0 0 0 3px #6b9a8c20}.field textarea{resize:vertical}.status{min-height:24px;color:#28734f;font-weight:700;font-size:13px}.guest-list{max-width:680px;margin:22px auto 0}.guest-entry{padding:15px 18px;background:#ffffffb8;border-left:3px solid #c69b5c;margin:9px 0;border-radius:4px}.guest-entry strong{font-size:13px}.guest-entry p{font-size:13px;color:#657777;margin:6px 0 0;line-height:1.6}
+footer{padding:28px 8%;background:var(--night);color:#b9cfca;display:flex;justify-content:space-between;gap:15px;font-size:9px;letter-spacing:1.5px}footer a{color:var(--gold)}
+@media(max-width:850px){.hero-orbit{right:-9%;opacity:.5}.interests-grid{grid-template-columns:repeat(2,1fr)}.interest:last-child{grid-column:span 2}}
+@media(max-width:650px){.topbar{padding:13px 5%}.menu-btn{display:block}nav{display:none;position:absolute;top:58px;left:0;right:0;background:var(--night);padding:18px 6%;flex-direction:column;align-items:flex-start;gap:17px}nav.open{display:flex}.hero{min-height:670px;padding:100px 7% 80px}.hero h1{font-size:62px}.hero-orbit{width:270px;right:-105px;top:12%;opacity:.35}.hero-tag{left:7%;right:7%;font-size:7px;gap:12px}.hero-tag span:last-child{display:none}section{padding:68px 6%}.welcome-grid,.about-layout{grid-template-columns:1fr}.door-grid{display:block}.door{margin-bottom:13px;min-height:205px}.interests-grid{grid-template-columns:1fr 1fr}.interest{min-height:205px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-tile{height:145px}.gallery-tile span{font-size:40px}.gallery-tile b{font-size:16px}.form-card{padding:22px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}footer{font-size:7px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#home">✦ <span>JOESAL</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#interests">Interests</a><a href="#memories">Moments</a><a href="#gallery">Gallery</a><a href="#guestbook">Guestbook</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">✦ A LITTLE WORLD OF BIG DREAMS ✦</div>
+    <h1>Joesal's<br><em>Wonderworld</em></h1>
+    <p>Welcome to my happy place — a colourful universe of favourite games, music, delicious food, green spaces and memories waiting to be made.</p>
+    <a class="btn" href="#doors">EXPLORE MY WORLD <span>↗</span></a>
+  </div>
+  <div class="hero-orbit"><div class="planet"></div><span class="orbit-star s1">✦</span><span class="orbit-star s2">✧</span><span class="orbit-star s3">✦</span></div>
+  <div class="hero-tag"><span>FOOTBALL · MUSIC · CRICKET</span><span>MADE WITH ♥ FOR JOESAL</span></div>
+</section>
+
+<section class="welcome">
+  <div class="section-head"><div class="eyebrow">WELCOME, FRIEND</div><h2>Every great story starts with <em>a hello.</em></h2><p>Come on in! This website is a little collection of the things Joesal loves, the moments worth remembering and the dreams that make life exciting.</p></div>
+  <div class="welcome-grid">
+    <div class="welcome-card"><h3>One boy. Many interests. Endless possibilities.</h3><p>From the excitement of a football match to the calm of a beautiful natural view, there is always something new to enjoy. Explore the sections below and discover Joesal's little universe.</p></div>
+    <div class="quote-card"><span class="spark">✧</span><h3>A little reminder</h3><p>“Be curious, stay kind, follow your dreams and find joy in the little things.”</p></div>
+  </div>
+</section>
+
+<section id="doors">
+  <div class="section-head"><div class="eyebrow">FIVE LITTLE DOORS</div><h2>Choose your <em>adventure.</em></h2><p>Each link takes you to a different part of this one-page website.</p></div>
+  <div class="door-grid">
+    <a class="door d1" href="#about"><small>01 / THE INTRODUCTION</small><span class="emoji">🧑‍🚀</span><h3>About Joesal</h3><p>Meet the boy behind this wonderworld.</p><b>DISCOVER MORE ↗</b></a>
+    <a class="door d2" href="#interests"><small>02 / FAVOURITE THINGS</small><span class="emoji">⚽</span><h3>My Interests</h3><p>Football, music, cricket, food and nature.</p><b>EXPLORE MY LIKES ↗</b></a>
+    <a class="door d3" href="#memories"><small>03 / HAPPY DAYS</small><span class="emoji">📖</span><h3>My Moments</h3><p>A table of activities and happy memories.</p><b>VIEW MOMENTS ↗</b></a>
+    <a class="door d4" href="#gallery"><small>04 / CREATIVE CORNER</small><span class="emoji">🎨</span><h3>Gallery</h3><p>A colourful collection of favourite themes.</p><b>VISIT GALLERY ↗</b></a>
+    <a class="door d5" href="#guestbook"><small>05 / SAY HELLO</small><span class="emoji">💌</span><h3>Guestbook</h3><p>Leave a friendly message for Joesal.</p><b>WRITE A MESSAGE ↗</b></a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-layout">
+    <div class="initials">J<span style="font-size:42px">✦</span></div>
+    <div class="about-copy"><div class="eyebrow">01 / A LITTLE INTRODUCTION</div><h2>Hello, I'm Joesal!</h2><p>I'm Joesal, and this is my own little corner of the internet. I enjoy having fun, exploring the world around me, discovering new things and spending time with the people who make me smile.</p><p>This page is a celebration of my favourite things and all the wonderful possibilities ahead. Every day is a chance to learn, laugh, play and create a new memory.</p><div class="pill-row"><span class="pill">Curious mind ✨</span><span class="pill">Big dreams 🌟</span><span class="pill">Happy heart 💛</span></div></div>
+  </div>
+</section>
+
+<section id="interests">
+  <div class="section-head"><div class="eyebrow">02 / THINGS I LOVE</div><h2>My favourite <em>little joys.</em></h2><p>Five things that bring fun, energy, flavour and inspiration into my days.</p></div>
+  <div class="interests-grid">
+    <article class="interest i1"><span class="emoji">⚽</span><h3>Football</h3><p>Teamwork, goals, great passes and the thrill of the beautiful game.</p></article>
+    <article class="interest i2"><span class="emoji">🎧</span><h3>Music</h3><p>Catchy beats, favourite songs and melodies for every mood.</p></article>
+    <article class="interest i3"><span class="emoji">🏏</span><h3>Cricket</h3><p>Big hits, brilliant catches and exciting last-over moments.</p></article>
+    <article class="interest i4"><span class="emoji">🍕</span><h3>Food</h3><p>Tasty treats, delicious discoveries and favourite flavours.</p></article>
+    <article class="interest i5"><span class="emoji">🌿</span><h3>Nature</h3><p>Fresh air, green trees, open skies and outdoor adventures.</p></article>
+  </div>
+</section>
+
+<section class="memories" id="memories">
+  <div class="section-head"><div class="eyebrow">03 / LITTLE MEMORY BOOK</div><h2>Moments to <em>remember.</em></h2><p>A sample table of Joesal's favourite activities. Edit these examples and add real dates whenever you like.</p></div>
+  <div class="table-wrap"><table><thead><tr><th>No.</th><th>Activity</th><th>Favourite part</th><th>Mood</th></tr></thead><tbody>
+    <tr><td>01</td><td>Playing football</td><td>Scoring a goal with the team</td><td>⚡ Excited</td></tr>
+    <tr><td>02</td><td>Listening to music</td><td>Enjoying a favourite song</td><td>🎵 Relaxed</td></tr>
+    <tr><td>03</td><td>Watching cricket</td><td>A thrilling match finish</td><td>🏆 Thrilled</td></tr>
+    <tr><td>04</td><td>Trying delicious food</td><td>Discovering a new favourite</td><td>😋 Happy</td></tr>
+    <tr><td>05</td><td>Exploring nature</td><td>Enjoying a beautiful view</td><td>🌱 Peaceful</td></tr>
+  </tbody></table><p class="table-note">✦ These are sample entries — personalise them with Joesal's real-life memories.</p></div>
+</section>
+
+<section id="gallery">
+  <div class="section-head"><div class="eyebrow">04 / COLOURS OF MY WORLD</div><h2>A gallery of <em>good vibes.</em></h2><p>Illustrated tiles for the things Joesal enjoys. Replace the emoji tiles with personal photos if you wish.</p></div>
+  <div class="gallery-grid">
+    <div class="gallery-tile g1"><span>⚽</span><b>Game time</b></div><div class="gallery-tile g2"><span>🎶</span><b>Music mood</b></div><div class="gallery-tile g3"><span>🏏</span><b>Cricket fever</b></div><div class="gallery-tile g4"><span>🍉</span><b>Yummy moments</b></div><div class="gallery-tile g5"><span>🌳</span><b>Into the green</b></div><div class="gallery-tile g6"><span>🌈</span><b>Bright days</b></div>
+  </div>
+  <div class="media-note"><strong>Want to add a real photo or video?</strong><br>This is a single-file website, so you can keep it simple by using image URLs in an <code>&lt;img&gt;</code> tag or a video URL in a <code>&lt;video&gt;</code> tag. For local media, upload the media file to the same GitHub repository and update its filename in the HTML.</div>
+</section>
+
+<section class="guestbook" id="guestbook">
+  <div class="section-head"><div class="eyebrow">05 / A NOTE FOR JOESAL</div><h2>Leave a little <em>hello.</em></h2><p>Fill in the form and add your message to the guestbook shown below.</p></div>
+  <div class="form-card">
+    <form id="guestForm">
+      <div class="form-grid">
+        <div class="field"><label for="visitor">YOUR NAME</label><input id="visitor" name="visitor" placeholder="Enter your name" required maxlength="50"></div>
+        <div class="field"><label for="topic">FAVOURITE TOPIC</label><select id="topic" name="topic" required><option value="">Choose one</option><option>Football ⚽</option><option>Music 🎧</option><option>Cricket 🏏</option><option>Food 🍕</option><option>Nature 🌿</option><option>Just saying hello 💛</option></select></div>
+        <div class="field full"><label for="message">YOUR MESSAGE</label><textarea id="message" name="message" rows="4" placeholder="Write something kind..." required maxlength="400"></textarea></div>
+      </div>
+      <button class="btn" type="submit">ADD TO GUESTBOOK <span>↗</span></button>
+      <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="guest-list" id="guestList" aria-live="polite"></div>
+</section>
+</main>
+
+<footer><span>© 2026 JOESAL'S WONDERWORLD · MADE WITH ♥</span><a href="#home">BACK TO THE TOP ↑</a></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('mainNav');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('guestForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('visitor').value.trim();
+  const topic=document.getElementById('topic').value;
+  const message=document.getElementById('message').value.trim();
+  if(!name||!topic||!message)return;
+  const entry=document.createElement('div');entry.className='guest-entry';
+  const heading=document.createElement('strong');heading.textContent=name+' · '+topic;
+  const body=document.createElement('p');body.textContent=message;
+  entry.append(heading,body);
+  document.getElementById('guestList').prepend(entry);
+  document.getElementById('formStatus').textContent='Thank you, '+name+'! Your message has been added below.';
+  this.reset();
+});
+</script>
+</body>
+</html>
